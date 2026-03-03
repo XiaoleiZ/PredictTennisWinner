@@ -5,7 +5,7 @@ This repository contains a streamlined Jupyter notebook for predicting WTA and A
 ## Key Features
 
 - **Game-Level Predictions**: Instead of predicting match outcomes directly, the model uses head-to-head dominance to predict *game-winning probability*. In this way, we make use of the richer information from historical game scores. Custom combinatorics convert these into match-winning probabilities based on strict tennis rules.
-- **Walk-Through Fitting**: Evaluates tournaments in 2025 H2 one by one. The model trains strictly on matches completed *before* each tournament's start date to prevent data leakage.
+- **Walk-Through Fitting**: We uses 2022-2025 H1 (first-half season) historical match outcomes as strict training data. We evaluate out-of-sample forecasting performance by applying the models in the 2025 H2 tournaments. The models are trained strictly on matches completed *before* each tournament's start date to prevent data leakage.
 - **Optimized Bayesian BT Model**: Incorporates player rankings as priors and uses vectorized analytic gradients (`L-BFGS-B`) for fast, instant training.
 
 ## Out-of-Sample Performance (2025 H2)
